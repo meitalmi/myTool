@@ -1,4 +1,4 @@
-package tools;
+package com.utils;
 
 import org.apache.poi.ss.usermodel.Cell;
 
@@ -52,27 +52,13 @@ public class CellUtils {
 
         // Set the cell data value
         switch (oldCell.getCellType()) {
-            case BLANK:
-                newCell.setCellValue(oldCell.getStringCellValue());
-                break;
-            case BOOLEAN:
-                newCell.setCellValue(oldCell.getBooleanCellValue());
-                break;
-            case ERROR:
-                newCell.setCellErrorValue(oldCell.getErrorCellValue());
-                break;
-            case FORMULA:
-                newCell.setCellFormula(oldCell.getCellFormula());
-                break;
-            case NUMERIC:
-                newCell.setCellValue(oldCell.getNumericCellValue());
-                break;
-            case STRING:
-                newCell.setCellValue(oldCell.getRichStringCellValue());
-                break;
-            case _NONE:
-                newCell.setCellValue("");
-                break;
+            case BLANK -> newCell.setCellValue(oldCell.getStringCellValue());
+            case BOOLEAN -> newCell.setCellValue(oldCell.getBooleanCellValue());
+            case ERROR -> newCell.setCellErrorValue(oldCell.getErrorCellValue());
+            case FORMULA -> newCell.setCellFormula(oldCell.getCellFormula());
+            case NUMERIC -> newCell.setCellValue(oldCell.getNumericCellValue());
+            case STRING -> newCell.setCellValue(oldCell.getRichStringCellValue());
+            case _NONE -> newCell.setCellValue("");
         }
     }
 }

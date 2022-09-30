@@ -1,5 +1,4 @@
-import tools.ITool;
-import tools.ReportChangesTool;
+import com.interfaces.ITool;
 
 public class Main {
 

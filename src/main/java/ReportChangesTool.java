@@ -1,8 +1,11 @@
-package tools;
-
+import com.*;
+import com.interfaces.ITool;
+import com.interfaces.reporters.IAddedRowsReporter;
+import com.interfaces.reporters.IChangedRowsReporter;
+import com.interfaces.reporters.IDeletedRowsReporter;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import tools.*;
+import com.models.MySheet;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -11,8 +14,6 @@ import java.io.IOException;
 
 public class ReportChangesTool implements ITool {
     public static final String OLD_FILE_NAME = "קובץ משרות.xlsx";
-    public static final String NEW_FILE_NAME = "src/main/resources/file1.xlsx";
-    public static final String FILE_TITLE = "src/main/resources/outputFile.xlsx";
     public static final String ERRORS_FILE_NAME = "src/main/resources/קובץ שגיאות.txt";
 
     @Override

@@ -1,4 +1,4 @@
-package tools;
+package com.interfaces;
 
 public interface ITool {
 

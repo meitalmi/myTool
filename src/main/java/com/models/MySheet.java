@@ -1,7 +1,8 @@
-package tools;
+package com.models;
 
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
+import com.utils.RowUtils;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -11,7 +12,7 @@ import java.util.Map;
 public class MySheet {
     public static final List<String> KEY_VALUE_OPTIONS = Arrays.asList("הסניף", "סניף");
     public static Integer KEY_COLUMN = null;
-    private Sheet sheet;
+    private final Sheet sheet;
     private Map<String, Row> map = null;
 
     public MySheet(Sheet sheet) {
@@ -43,19 +44,13 @@ public class MySheet {
         this.map = new HashMap<>();
 
         for (Row row : this.sheet) {
-            String id = RowUtils.getIdOfRow(row, KEY_COLUMN);
+            String id = MyRow.getIdOfRow(row, KEY_COLUMN);
             if (id != null) {
                 id = id.replaceAll("\\s+", "");
             }
             map.put(id, row);
         }
         return map;
-    }
-
-
-    public boolean isRowExists(Row row) {
-        String id = RowUtils.getIdOfRow(row, KEY_COLUMN);
-        return this.getRows().containsKey(id);
     }
 
     public Row getFirstRow(List<String> idsOptions) {
@@ -66,9 +61,4 @@ public class MySheet {
         }
         return null;
     }
-
-    public boolean isRowExists(String rowId) {
-        return this.getRows().containsKey(rowId);
-    }
-
 }

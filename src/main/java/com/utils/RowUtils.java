@@ -1,24 +1,11 @@
-package tools;
+package com.utils;
 
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
+import com.models.MySheet;
 
-import static org.apache.poi.ss.usermodel.Row.MissingCellPolicy.CREATE_NULL_AS_BLANK;
 import static org.apache.poi.ss.usermodel.Row.MissingCellPolicy.RETURN_NULL_AND_BLANK;
 
 public class RowUtils {
-
-    public static String getIdOfRow(Row row, int keyColumn) {
-        Cell id = row.getCell(keyColumn, CREATE_NULL_AS_BLANK);
-        if (id == null || id.getCellType() == CellType.BLANK
-                || id.getCellType() == CellType._NONE
-                || id.getCellType() == CellType.ERROR)
-            return null;
-
-        String idStr = CellUtils.getCellValue(id);
-        return idStr;
-    }
 
     public static boolean isRowsEquals(Row row1, Row row2) {
         if (row1 == null && row2 == null) return true;

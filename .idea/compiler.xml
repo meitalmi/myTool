@@ -13,4 +13,9 @@
       <module name="interviewQuestions25July2022" target="16" />
     </bytecodeTargetLevel>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="myTool" options="" />
+    </option>
+  </component>
 </project>
