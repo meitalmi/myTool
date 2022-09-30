@@ -12,9 +12,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class ReportChangesTool implements ITool {
+public class ExcelTool implements ITool {
     public static final String OLD_FILE_NAME = "קובץ משרות.xlsx";
-    public static final String ERRORS_FILE_NAME = "src/main/resources/קובץ שגיאות.txt";
 
     @Override
     public void run() {
