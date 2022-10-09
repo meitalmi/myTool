@@ -1,10 +1,10 @@
-package com;
+package com.mytool.excelobjects;
 
-import com.interfaces.reporters.IAddedRowsReporter;
-import com.interfaces.reporters.IChangedRowsReporter;
-import com.interfaces.reporters.IDeletedRowsReporter;
-import com.models.MySheet;
-import com.utils.SheetUtils;
+import com.mytool.interfaces.IAddedRowsReporter;
+import com.mytool.interfaces.IChangedRowsReporter;
+import com.mytool.interfaces.IDeletedRowsReporter;
+import com.mytool.models.MySheet;
+import com.mytool.utils.SheetUtils;
 
 public class ExcelReporter implements IAddedRowsReporter, IDeletedRowsReporter, IChangedRowsReporter {
 

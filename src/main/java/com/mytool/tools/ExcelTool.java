@@ -1,11 +1,13 @@
-import com.*;
-import com.interfaces.ITool;
-import com.interfaces.reporters.IAddedRowsReporter;
-import com.interfaces.reporters.IChangedRowsReporter;
-import com.interfaces.reporters.IDeletedRowsReporter;
+package com.mytool.tools;
+
+import com.mytool.excelobjects.ExcelReporter;
+import com.mytool.interfaces.IDeletedRowsReporter;
+import com.mytool.interfaces.ITool;
+import com.mytool.interfaces.IAddedRowsReporter;
+import com.mytool.interfaces.IChangedRowsReporter;
+import com.mytool.models.MySheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import com.models.MySheet;
 
 import java.io.File;
 import java.io.FileInputStream;

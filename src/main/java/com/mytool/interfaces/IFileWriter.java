@@ -1,4 +1,4 @@
-package com.interfaces;
+package com.mytool.interfaces;
 
 public interface IFileWriter<ROW, SHEET> {
 

@@ -1,6 +1,6 @@
-package com.interfaces.reporters;
+package com.mytool.interfaces;
 
-import com.models.MySheet;
+import com.mytool.models.MySheet;
 
 public interface IAddedRowsReporter {
 

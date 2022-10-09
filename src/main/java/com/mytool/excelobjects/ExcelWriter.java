@@ -1,19 +1,18 @@
-package com;
+package com.mytool.excelobjects;
 
-import com.interfaces.IFileWriter;
+import com.mytool.interfaces.IFileWriter;
+import com.mytool.models.MyRow;
+import com.mytool.models.MySheet;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import com.models.MyRow;
-import com.models.MySheet;
-import com.utils.CellUtils;
+import com.mytool.utils.CellUtils;
 
 import java.io.File;
 import java.io.FileOutputStream;
 
 public class ExcelWriter implements IFileWriter<MyRow, MySheet> {
     XSSFWorkbook workbook;
-
 
     public ExcelWriter(String sheetName) {
         this.workbook = new XSSFWorkbook();
@@ -28,6 +27,7 @@ public class ExcelWriter implements IFileWriter<MyRow, MySheet> {
                 .setCellValue("(חדש)");
         writeIntoFile(beforeRow);
         writeIntoFile(afterRow);
+        writeEmptyRow();
     }
 
     @Override
@@ -35,6 +35,11 @@ public class ExcelWriter implements IFileWriter<MyRow, MySheet> {
         Row firstRow = sheet.getFirstRow(MySheet.KEY_VALUE_OPTIONS);
         writeIntoFile(firstRow);
         if (firstRow == null) return; //TODO RETURN ERROR
+    }
+
+    public void writeEmptyRow() {
+        int rowIndex = workbook.getSheetAt(0).getLastRowNum();
+        Row newRow = workbook.getSheetAt(0).createRow(rowIndex + 1);
     }
 
     public void writeIntoFile(Row row) {
